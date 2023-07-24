@@ -9,12 +9,65 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="UsersFolder_256x256_icon-icons.com_76750.png" />
+    <None Remove="Vistas-Rol\agente.png" />
+    <None Remove="Vistas-Rol\carrito-de-supermercado.png" />
+    <None Remove="Vistas-Rol\compras.png" />
+    <None Remove="Vistas-Rol\proveedor.png" />
+    <None Remove="Vistas-Rol\punto-de-venta.png" />
+    <None Remove="Vistas\add-user_5268364.png" />
+    <None Remove="Vistas\add_10115289.png" />
+    <None Remove="Vistas\barcodeminimono_105811.png" />
+    <None Remove="Vistas\cancel_circle_close_delete_discard_file_x_icon_123219.png" />
+    <None Remove="Vistas\carrito-de-supermercado.png" />
+    <None Remove="Vistas\clothing_shop_bag_tshirt_icon_192654.png" />
+    <None Remove="Vistas\codigo-de-barras.png" />
+    <None Remove="Vistas\compras.png" />
+    <None Remove="Vistas\credit-card_9748247.png" />
+    <None Remove="Vistas\floppy-disk_9309406.png" />
+    <None Remove="Vistas\icons8-löschen-512-02940def1609cd29709fe2d929ba6cd425d783a6.png" />
+    <None Remove="Vistas\mejor-producto.png" />
+    <None Remove="Vistas\money_3163223.png" />
+    <None Remove="Vistas\salvado.png" />
+    <None Remove="Vistas\shipping_697698.png" />
+    <None Remove="Vistas\unnamed.png" />
+    <None Remove="_9de05bf1-c607-4c83-885d-84b8ddf41605.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignExtensions" Version="3.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UsersFolder_256x256_icon-icons.com_76750.png" />
+    <Resource Include="Vistas-Rol\agente.png" />
+    <Resource Include="Vistas-Rol\carrito-de-supermercado.png" />
+    <Resource Include="Vistas-Rol\compras.png" />
+    <Resource Include="Vistas-Rol\proveedor.png" />
+    <Resource Include="Vistas-Rol\punto-de-venta.png" />
+    <Resource Include="Vistas\add-user_5268364.png" />
+    <Resource Include="Vistas\add_10115289.png" />
+    <Resource Include="Vistas\barcodeminimono_105811.png" />
+    <Resource Include="Vistas\cancel_circle_close_delete_discard_file_x_icon_123219.png" />
+    <Resource Include="Vistas\carrito-de-supermercado.png" />
+    <Resource Include="Vistas\clothing_shop_bag_tshirt_icon_192654.png" />
+    <Resource Include="Vistas\codigo-de-barras.png" />
+    <Resource Include="Vistas\compras.png" />
+    <Resource Include="Vistas\credit-card_9748247.png" />
+    <Resource Include="Vistas\floppy-disk_9309406.png" />
+    <Resource Include="Vistas\icons8-löschen-512-02940def1609cd29709fe2d929ba6cd425d783a6.png" />
+    <Resource Include="Vistas\mejor-producto.png" />
+    <Resource Include="Vistas\money_3163223.png" />
+    <Resource Include="Vistas\salvado.png" />
+    <Resource Include="Vistas\shipping_697698.png" />
+    <Resource Include="Vistas\unnamed.png" />
+    <Resource Include="_9de05bf1-c607-4c83-885d-84b8ddf41605.jpg" />
   </ItemGroup>
 
 </Project>

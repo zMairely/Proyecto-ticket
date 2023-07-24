@@ -1,0 +1,29 @@
+﻿<Window x:Class="ProyectoFinal_23CV.Vistas_Wpf.EmpleadoVista"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal_23CV.Vistas_Wpf"
+        mc:Ignorable="d"
+        Title="EmpleadoVista" Height="450" Width="800">
+    <Grid Background="Black">
+        <Border BorderBrush="BlueViolet" BorderThickness="1" HorizontalAlignment="Center" Height="424" Margin="0,10,0,0" VerticalAlignment="Top" Width="740"/>
+        <Rectangle HorizontalAlignment="Left" Height="414" Margin="63,0,0,0" Stroke="BlueViolet" VerticalAlignment="Center" Width="684"/>
+
+        <Button x:Name="btnverproductos" Content="" HorizontalAlignment="Left" Height="182" Margin="103,186,0,0" VerticalAlignment="Top" Width="226" BorderBrush="{x:Null}" Click="btnverproductos_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Vistas-Rol/proveedor.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnvender" Content="" HorizontalAlignment="Left" Height="187" Margin="506,176,0,0" VerticalAlignment="Top" Width="228" BorderBrush="{x:Null}" Click="btnvender_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="/Vistas-Rol/punto-de-venta.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="BIENVENIDO USUARIO" HorizontalAlignment="Left" Height="57" Margin="139,77,0,0" VerticalAlignment="Top" Width="532" FontSize="48" FontFamily="Franklin Gothic Heavy" Foreground="#FFF8F2F2"/>
+        <Label Content="VENTA" HorizontalAlignment="Left" Height="47" Margin="544,373,0,0" VerticalAlignment="Top" Width="92" FontSize="21" FontWeight="Bold" Foreground="#FFFEFBFB"/>
+        <Label Content="VER PRODUCTOS" HorizontalAlignment="Left" Margin="130,373,0,0" VerticalAlignment="Top" FontSize="21" FontWeight="Bold" Foreground="#FFFEFBFB"/>
+        <Button Content="Cerrar Sesion" HorizontalAlignment="Left" Margin="633,26,0,0" VerticalAlignment="Top" Height="46" Width="114" Background="{x:Null}" Foreground="#FFF6EDED" FontSize="18" BorderBrush="#FFF6EDED" Click="Button_Click"/>
+
+    </Grid>
+</Window>

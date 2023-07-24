@@ -6,13 +6,87 @@
         xmlns:local="clr-namespace:ProyectoFinal_23CV"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label FontSize="30" Content="Login" HorizontalAlignment="Left" Height="80" Margin="129,55,0,0" VerticalAlignment="Top" Width="508" HorizontalContentAlignment="Center"/>
-        <Label FontSize="15" Content="Usuario" HorizontalAlignment="Left" Height="26" Margin="308,135,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="txtUserName" FontSize="15" HorizontalAlignment="Left" Margin="308,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label FontSize="15" Content="Password" HorizontalAlignment="Left" Height="28" Margin="308,193,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
-        <PasswordBox x:Name="txtPassword" FontSize="15" HorizontalAlignment="Left" Height="20" Margin="308,224,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Height="30" Margin="336,255,0,0" VerticalAlignment="Top" Width="64" Background="#FF5CC754" Click="btnLogin_Click"/>
 
-    </Grid>
+    <Canvas Name="canvas">
+        <Canvas.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF6507FB"/>
+                <GradientStop Color="PaleTurquoise" Offset="1"/>
+                <GradientStop Color="#FF7A0EF8" Offset="0.097"/>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <!-- Resto de los controles de inicio de sesión -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="800" Height="434">
+
+
+            <!-- Background -->
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="BlueViolet" Offset="0.0" />
+                    <GradientStop Color="LightSkyBlue" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- Login Label -->
+            <Label Content="Iniciar Sesión" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" FontSize="40" FontWeight="Bold" Foreground="White"/>
+
+            <!-- Usuario -->
+            <Label Content="Usuario:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" FontSize="24" Foreground="White"/>
+            <TextBox x:Name="txtUserName" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,190,0,0" Width="300" Height="40" FontSize="16" BorderThickness="1" TextAlignment="Center" >
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+            <!-- Contraseña -->
+            <Label Content="Contraseña:" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,240,0,0" FontSize="24" Foreground="White"/>
+            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,280,0,0" Width="300" Height="40" FontSize="16" PasswordChar ="●" Padding="80,0,0,0"  >
+                <PasswordBox.Style>
+                    <Style TargetType="PasswordBox">
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontFamily" Value="Arial"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                                    <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="20">
+                                        <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+
+                </PasswordBox.Style>
+            </PasswordBox>
+
+            <!-- Botón de Inicio de Sesión -->
+            <Button x:Name="btnLogin" Content="Iniciar Sesión" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,350,0,0" Width="150" Height="40" FontSize="20" Background="#0078D7" Foreground="White" Click="btnLogin_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Rectangle HorizontalAlignment="Left" Height="131" Margin="615,40,0,0" Stroke="Azure" VerticalAlignment="Top" Width="142" StrokeThickness="4"/>
+            <Label Content="" HorizontalAlignment="Left" Height="100" Margin="628,56,0,0" VerticalAlignment="Top" Width="116">
+                <Label.Background>
+                    <ImageBrush ImageSource="/UsersFolder_256x256_icon-icons.com_76750.png"/>
+                </Label.Background>
+            </Label>
+
+
+        </Grid>
+
+    </Canvas>
+
+
 </Window>

@@ -17,49 +17,52 @@ namespace ProyectoFinal_23CV.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("GeneroPelicula", b =>
+            modelBuilder.Entity("ProyectoFinal_23CV.Entities.DetalleVenta", b =>
                 {
-                    b.Property<int>("GenerosPkGenero")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PeliculasPkPelicula")
-                        .HasColumnType("int");
-
-                    b.HasKey("GenerosPkGenero", "PeliculasPkPelicula");
-
-                    b.HasIndex("PeliculasPkPelicula");
-
-                    b.ToTable("GeneroPelicula");
-                });
-
-            modelBuilder.Entity("ProyectoFinal_23CV.Entities.Genero", b =>
-                {
-                    b.Property<int>("PkGenero")
+                    b.Property<int>("PkDetalleVenta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
 
-                    b.HasKey("PkGenero");
+                    b.Property<int>("FkProducto")
+                        .HasColumnType("int");
 
-                    b.ToTable("Generos");
+                    b.Property<int>("FkVenta")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductoPkProducto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VentaPkVenta")
+                        .HasColumnType("int");
+
+                    b.HasKey("PkDetalleVenta");
+
+                    b.HasIndex("ProductoPkProducto");
+
+                    b.HasIndex("VentaPkVenta");
+
+                    b.ToTable("DetallesVenta");
                 });
 
-            modelBuilder.Entity("ProyectoFinal_23CV.Entities.Pelicula", b =>
+            modelBuilder.Entity("ProyectoFinal_23CV.Entities.Producto", b =>
                 {
-                    b.Property<int>("PkPelicula")
+                    b.Property<int>("PkProducto")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Titulo")
+                    b.Property<string>("NombreProducto")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("PkPelicula");
+                    b.Property<double>("PrecioProducto")
+                        .HasColumnType("double");
 
-                    b.ToTable("Peliculas");
+                    b.HasKey("PkProducto");
+
+                    b.ToTable("Productos");
                 });
 
             modelBuilder.Entity("ProyectoFinal_23CV.Entities.Rol", b =>
@@ -105,19 +108,57 @@ namespace ProyectoFinal_23CV.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("GeneroPelicula", b =>
+            modelBuilder.Entity("ProyectoFinal_23CV.Entities.Venta", b =>
                 {
-                    b.HasOne("ProyectoFinal_23CV.Entities.Genero", null)
+                    b.Property<int>("PkVenta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaVenta")
+                        .HasColumnType("datetime");
+
+                    b.Property<int?>("FkProducto")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FkVendedor")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Iva")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Subtotal")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("double");
+
+                    b.HasKey("PkVenta");
+
+                    b.HasIndex("FkProducto");
+
+                    b.HasIndex("FkVendedor");
+
+                    b.ToTable("Ventas");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_23CV.Entities.DetalleVenta", b =>
+                {
+                    b.HasOne("ProyectoFinal_23CV.Entities.Producto", "Producto")
                         .WithMany()
-                        .HasForeignKey("GenerosPkGenero")
+                        .HasForeignKey("ProductoPkProducto");
+
+                    b.HasOne("ProyectoFinal_23CV.Entities.Venta", "Venta")
+                        .WithMany("DetallesVenta")
+                        .HasForeignKey("VentaPkVenta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProyectoFinal_23CV.Entities.Pelicula", null)
-                        .WithMany()
-                        .HasForeignKey("PeliculasPkPelicula")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Producto");
+
+                    b.Navigation("Venta");
                 });
 
             modelBuilder.Entity("ProyectoFinal_23CV.Entities.Usuario", b =>
@@ -127,6 +168,26 @@ namespace ProyectoFinal_23CV.Migrations
                         .HasForeignKey("FkRol");
 
                     b.Navigation("Roles");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_23CV.Entities.Venta", b =>
+                {
+                    b.HasOne("ProyectoFinal_23CV.Entities.Producto", "Producto")
+                        .WithMany()
+                        .HasForeignKey("FkProducto");
+
+                    b.HasOne("ProyectoFinal_23CV.Entities.Usuario", "Vendedor")
+                        .WithMany()
+                        .HasForeignKey("FkVendedor");
+
+                    b.Navigation("Producto");
+
+                    b.Navigation("Vendedor");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_23CV.Entities.Venta", b =>
+                {
+                    b.Navigation("DetallesVenta");
                 });
 #pragma warning restore 612, 618
         }

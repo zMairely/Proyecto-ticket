@@ -13,7 +13,7 @@ namespace ProyectoFinal_23CV.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseMySQL("server =localhost; database= ProyectoDb23cv; user= root; password=");
+            options.UseMySQL("server =localhost; database= mai; user= root; password=");
           
 
 
@@ -22,18 +22,21 @@ namespace ProyectoFinal_23CV.Context
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Rol> Roles { get; set; }
-        public DbSet<Genero> Generos { get; set; }
-        public DbSet<Pelicula> Peliculas { get; set;}
+        public DbSet<Producto> Productos { get; set; }
+       
+        public DbSet<Venta> Ventas { get; set; }
+        public DbSet <DetalleVenta> DetallesVenta { get; set; }
 
 
         //protected override void OnModelCreating(ModelBuilder builder)
         //{
 
-        //    var rol = new Rol{ Nombre = "soporte"};
-        //    var rol2 = new Rol { Nombre = "Bd" };
+        //    var rol = new Rol{ Nombre = "SuperAdmin"};
+        //    var rol2 = new Rol { Nombre = "Admin" };
+        //    var rol3 = new Rol { Nombre = "Usuario" };
 
-        //    builder.Entity<Rol>().HasData(rol, rol2);
-        //    base.OnModelCreating(builder);
+        //    builder.Entity<Rol>().HasData(rol, rol2,rol3);
+        //   base.OnModelCreating(builder);
 
         //}
 

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Vistas-Rol\EmpleadoVista.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\Productos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas-Rol\SGBD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\Usuarios.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\Ventas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\VisualizarTicketWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Vistas-Rol\EmpleadoVista.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\Productos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas-Rol\SGBD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\Usuarios.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\Ventas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\VisualizarTicketWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

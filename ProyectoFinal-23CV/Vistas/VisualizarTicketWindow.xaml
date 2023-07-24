@@ -1,0 +1,33 @@
+﻿<Window x:Class="ProyectoFinal_23CV.Vistas.VisualizarTicketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal_23CV.Vistas"
+        mc:Ignorable="d"
+        Title="VisualizarTicketWindow" Height="450" Width="400">
+
+    <Grid>
+        <!-- Agrega aquí los controles necesarios para mostrar la información del ticket -->
+        <TextBlock FontSize="30" FontWeight="Heavy" HorizontalAlignment="Center" Margin="0,10,0,10" Width="340" Foreground="#FFA44E70" Cursor="SizeNWSE" >
+            <TextBlock.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFEC7DF"/>
+                    <GradientStop Color="#FFFE328C" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Background><Run Text="        Shop Clothes"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="TxtInfoTicket" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10" />
+        <Label Content="" HorizontalAlignment="Left" Height="118" Margin="232,305,0,0" VerticalAlignment="Top" Width="138">
+            <Label.Background>
+                <ImageBrush ImageSource="/Vistas/clothing_shop_bag_tshirt_icon_192654.png"/>
+            </Label.Background>
+        </Label>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="49,306,0,0" TextWrapping="Wrap" Text="GRACIAS POR SU COMPRA!" VerticalAlignment="Top" Width="231" Background="{x:Null}" Foreground="#FF1F0E22" FontSize="14" BorderBrush="{x:Null}"/>
+        <Label Content="" HorizontalAlignment="Left" Height="62" Margin="64,339,0,0" VerticalAlignment="Top" Width="160">
+            <Label.Background>
+                <ImageBrush ImageSource="/Vistas/barcodeminimono_105811.png"/>
+            </Label.Background>
+        </Label>
+    </Grid>
+
+</Window>

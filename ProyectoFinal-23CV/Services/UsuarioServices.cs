@@ -100,6 +100,50 @@ namespace ProyectoFinal_23CV.Services
                 throw;
             }
         }
+        public void UpdateUser(int userId, Usuario usuario)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    Usuario existingUser = _context.Usuarios.FirstOrDefault(u => u.PkUsuario == userId);
+
+                    if (existingUser != null)
+                    {
+                        existingUser.Nombre = usuario.Nombre;
+                        existingUser.UserName = usuario.UserName;
+                        existingUser.Password = usuario.Password;
+                        existingUser.FkRol = usuario.FkRol;
+
+                        _context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al actualizar el usuario: " + ex.Message);
+            }
+        }
+        public void DeleteUser(int userId)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    Usuario usuario = _context.Usuarios.Find(userId);
+
+                    if (usuario != null)
+                    {
+                        _context.Usuarios.Remove(usuario);
+                        _context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al eliminar el usuario: " + ex.Message);
+            }
+        }
 
 
     }
